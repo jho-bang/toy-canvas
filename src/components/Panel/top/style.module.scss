@@ -8,9 +8,10 @@
   position: fixed;
   top: 20px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(0%);
   display: flex;
   gap: 20px;
+  z-index: 1;
 
   & .item {
     padding: 10px;
