@@ -1,0 +1,21 @@
+.panel {
+  width: 200px;
+  background-color: #ffffff;
+  border-left: 1px solid #ddd;
+  padding: 1em;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  & .item {
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
