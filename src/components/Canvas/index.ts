@@ -13,6 +13,23 @@ export class CanvasView extends AbstractCanvas<Props> {
   private offsetY = 0;
   private currentValue: Record<PropertyKey, unknown> | null = null;
 
+  @on("dblclick")
+  private _dblclick(ev: MouseEvent) {
+    const { canvas } = this.getData();
+    const rect = canvas.getBoundingClientRect();
+    const x = ev.clientX - rect.left;
+    const y = ev.clientY - rect.top;
+
+    const element = this.getElementAtPosition(x, y);
+    if (element) {
+      const newText = prompt("Edit text:", element.value);
+      if (newText !== null) {
+        element.value = newText;
+        this.draw(element.type);
+      }
+    }
+  }
+
   @on("mousedown")
   private _mousedown(ev: MouseEvent) {
     const { canvas } = this.getData();
@@ -38,7 +55,6 @@ export class CanvasView extends AbstractCanvas<Props> {
 
       this.currentValue.x = x - this.offsetX;
       this.currentValue.y = y - this.offsetY;
-      this.clear();
       this.draw("text");
     }
   }
@@ -59,7 +75,7 @@ export class CanvasView extends AbstractCanvas<Props> {
       x: canvas.clientWidth / 2,
       y: canvas.clientHeight / 2,
       meta: {
-        fontSize: 24,
+        fontSize: 34,
         fontFamily: "Pretendard",
         color: "#000",
       },

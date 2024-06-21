@@ -15,8 +15,7 @@ export class AbstractCanvas<T extends object> extends View<T> {
   draw(type: ItemType) {
     const { ctx } = this.getData();
     if (!ctx) return;
-    ctx.imageSmoothingEnabled = false;
-
+    this.clear();
     pipe(
       this.items,
       filter((item) => item.type === type),
