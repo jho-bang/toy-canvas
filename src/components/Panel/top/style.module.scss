@@ -2,7 +2,6 @@
   background-color: #ffffff;
   border-left: 1px solid #ddd;
   padding: 15px;
-  overflow-y: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   position: fixed;
@@ -12,11 +11,15 @@
   display: flex;
   gap: 20px;
   z-index: 1;
+  align-items: center;
 
   & .item {
-    padding: 10px;
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    & img {
+      width: 25px;
+      height: 25px;
+      display: block;
+    }
   }
 }

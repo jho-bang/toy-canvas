@@ -20,6 +20,7 @@ export class CommonPanel<T extends object> extends View<T> {
   show(placement: "top" | "left" | "right") {
     const translateX = placement === "top" ? "-50%" : "0";
     const translateY = placement === "top" ? "0" : "-50%";
+
     anime({
       targets: this.element(),
       translateX: translateX,
